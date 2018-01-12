@@ -13,7 +13,7 @@ pipeline {
         stage('select')
         {
         steps{
-            sh 'sqlcmd -S 209.45.48.90 -U sa -P 06220367 -Q "use dbedocsys; select cdempresa from documentos WHERE estadoCDR="cdra""'
+            sh 'sqlcmd -S 209.45.48.90 -U sa -P 06220367 -Q "use dbedocsys; select cdempresa from documentos WHERE estadoCDR='cdra'"'
 
         }
 
