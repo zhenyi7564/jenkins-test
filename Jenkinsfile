@@ -10,6 +10,10 @@ pipeline {
                 sh 'touch /Users/msuarez/Desktop/from-jenkins/test.txt'
                 }
         }
+        stage('enviar correo')
+        {
+                echo "enviando correo"
+        }
 
 }
 }
