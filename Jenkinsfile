@@ -21,7 +21,7 @@ pipeline {
             "query 2" :{
             sh 'sqlcmd -S 209.45.48.90 -U sa -P 06220367 -Q "use dbedocsys; select * from documentos"'
             }
-
+            )
         }
 
         }
