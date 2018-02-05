@@ -3,12 +3,11 @@ pipeline {
     parameters {
 
         choice(choices: 'no\nyes', description: 'Enable o-profile', name: 'enable_oprofile')
-        string(defaultValue: "AG", description: 'Analyzed PID, set enable o-profile to yes', name: 'PID')
+        string(defaultValue: "", description: 'Analyzed PID, set enable o-profile to yes', name: 'PID')
         choice(choices: 'no\nyes', description: 'Skip install and configuration- run test only', name: 'run_test_only')
         string(defaultValue: "test.feature", description: 'Feature file', name: 'feature_file')
         string(defaultValue: "@test1", description: 'cucumber test tag', name: 'tag')
         string(defaultValue: "msuarez@redhat.com", description: 'email for notifications', name: 'notification_email')
-
 
     }
 
