@@ -33,6 +33,7 @@ pipeline {
                 environment name: 'run_test_only', value: 'no'
             }
             steps{
+            echo "${node}"
             }
         }
 
@@ -41,6 +42,7 @@ pipeline {
                 environment name: 'run_test_only', value: 'no'
             }
             steps {
+            echo "${node}"
 
             }
         }
@@ -65,7 +67,7 @@ pipeline {
 
         "Execute test":{
                 echo "Run performance test. Feature file: ${feature_file} Tag: ${tag} "
-                sh "cucumber ${feature_file}' -t '${tag}' -b -x -v --format html --out reports.html --format pretty"
+                //sh "cucumber ${feature_file}' -t '${tag}' -b -x -v --format html --out reports.html --format pretty"
              }
 
         )
@@ -79,6 +81,8 @@ pipeline {
               }
 
           steps{
+          echo "${node}"
+
                }
         }
 
