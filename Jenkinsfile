@@ -98,7 +98,7 @@ pipeline {
                 mail(bcc: '',
                      body: "Run ${JOB_NAME}-#${BUILD_NUMBER} succeeded. To get more details, visit the build results page: ${BUILD_URL}.",
                      cc: '',
-                     from: 'jenkins-admin@redhat.com',
+                     from: 'jenkins-admin@gmail.com',
                      replyTo: '',
                      subject: "${JOB_NAME} ${BUILD_NUMBER} succeeded",
                      to: env.notification_email)
@@ -107,7 +107,7 @@ pipeline {
                         archiveArtifacts artifacts: "${analyzed_component}-${oprofile_report_name}"
                       }
 
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
+            //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
             }
         }
         }
@@ -116,11 +116,11 @@ pipeline {
             mail(bcc: '',
                 body: "Run ${JOB_NAME}-#${BUILD_NUMBER} succeeded. To get more details, visit the build results page: ${BUILD_URL}.",
                  cc: '',
-                 from: 'jenkins-admin@redhat.com',
+                 from: 'jenkins-admin@gmail.com',
                  replyTo: '',
                  subject: "${JOB_NAME} ${BUILD_NUMBER} failed",
                  to: env.notification_email)
-            publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/tester/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
+            //publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/tester/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
         }
     }
 
