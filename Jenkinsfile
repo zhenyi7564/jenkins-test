@@ -90,7 +90,7 @@ pipeline {
 
     post {
         success {
-        node('node1'){
+        //node('node1'){
 
             echo "Test succeeded"
             script {
@@ -104,12 +104,12 @@ pipeline {
                      to: env.notification_email)
                 if (env.enable_oprofile =='yes')
                      {
-                        archiveArtifacts artifacts: "${analyzed_component}-${oprofile_report_name}"
+                        //archiveArtifacts artifacts: "${analyzed_component}-${oprofile_report_name}"
                       }
 
             //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
             }
-        }
+        //}
         }
         failure {
             echo "Test failed"
